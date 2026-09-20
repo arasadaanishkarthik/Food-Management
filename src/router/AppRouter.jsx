@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 import { useAuth } from '@/context/AuthContext';
 
@@ -74,7 +74,7 @@ function Protected({ children }) {
 // ─── App Router ──────────────────────────────────────────────────
 export default function AppRouter() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Suspense fallback={<PageLoader />}>
         <Routes>
           {/* Public */}
@@ -131,6 +131,7 @@ export default function AppRouter() {
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Suspense>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
+

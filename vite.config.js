@@ -6,6 +6,7 @@ const root = import.meta.dirname
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: './',
   plugins: [react()],
   resolve: {
     alias: {
