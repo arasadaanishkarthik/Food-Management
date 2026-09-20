@@ -1,0 +1,98 @@
+// ─── NOTIFICATIONS DATA ───────────────────────────────────────
+export const notificationTypes = ['alert', 'info', 'success', 'warning'];
+
+export const mockNotifications = [
+  {
+    id: 'NTF-001',
+    type: 'warning',
+    title: 'Low Inventory Alert',
+    message: 'Tomatoes stock is critically low (6kg remaining). Reorder required.',
+    timestamp: '2024-09-15T09:15:00',
+    read: false,
+    targetRole: ['canteen_manager'],
+    actionLabel: 'View Inventory',
+    actionPath: '/canteen/inventory',
+  },
+  {
+    id: 'NTF-002',
+    type: 'success',
+    title: 'Waste Report Resolved',
+    message: 'Your report WR-2024-001 (Rice Waste at Hostel A) has been resolved.',
+    timestamp: '2024-09-15T08:30:00',
+    read: false,
+    targetRole: ['student'],
+    actionLabel: 'View Report',
+    actionPath: '/student/reports',
+  },
+  {
+    id: 'NTF-003',
+    type: 'info',
+    title: 'Surplus Food Available',
+    message: '8kg Vegetable Biryani available at Main Canteen until 9 PM tonight.',
+    timestamp: '2024-09-15T18:00:00',
+    read: false,
+    targetRole: ['student', 'other'],
+    actionLabel: 'Claim Surplus',
+    actionPath: '/student/surplus',
+  },
+  {
+    id: 'NTF-004',
+    type: 'alert',
+    title: 'New Waste Collection Task',
+    message: 'Waste collection assigned at Hostel C Mess. Report by 2 PM.',
+    timestamp: '2024-09-15T11:00:00',
+    read: false,
+    targetRole: ['worker'],
+    actionLabel: 'View Task',
+    actionPath: '/worker/tasks',
+  },
+  {
+    id: 'NTF-005',
+    type: 'info',
+    title: 'Monthly Report Generated',
+    message: 'August 2024 waste analytics report is ready for review.',
+    timestamp: '2024-09-01T09:00:00',
+    read: true,
+    targetRole: ['teaching_staff', 'canteen_manager'],
+    actionLabel: 'View Report',
+    actionPath: '/staff/teaching/analytics',
+  },
+  {
+    id: 'NTF-006',
+    type: 'success',
+    title: 'Achievement Unlocked!',
+    message: 'You earned the "Food Saver" badge for claiming 50+ surplus meals.',
+    timestamp: '2024-09-01T10:30:00',
+    read: true,
+    targetRole: ['student'],
+    actionLabel: 'View Achievements',
+    actionPath: '/sustainability/achievements',
+  },
+  {
+    id: 'NTF-007',
+    type: 'warning',
+    title: 'Expiry Alert',
+    message: 'Bread and Milk in inventory expire tomorrow. Use or redistribute today.',
+    timestamp: '2024-09-14T16:00:00',
+    read: true,
+    targetRole: ['canteen_manager'],
+    actionLabel: 'Manage Inventory',
+    actionPath: '/canteen/inventory',
+  },
+  {
+    id: 'NTF-008',
+    type: 'info',
+    title: 'Sustainability Goal Update',
+    message: 'Campus has achieved 34% waste reduction this semester!',
+    timestamp: '2024-09-10T12:00:00',
+    read: true,
+    targetRole: ['student', 'teaching_staff', 'canteen_manager', 'worker', 'non_teaching_staff', 'other'],
+    actionLabel: 'View Impact',
+    actionPath: '/sustainability',
+  },
+];
+
+export const getNotificationsForRole = (role) =>
+  mockNotifications.filter((n) => n.targetRole.includes(role));
+
+export default mockNotifications;
