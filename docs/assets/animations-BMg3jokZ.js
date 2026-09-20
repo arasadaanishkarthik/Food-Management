@@ -1,0 +1,1 @@
+import{C as e,T as t,f as n}from"./index-B7tNGAqX.js";t();var r=e();function i({children:e,delay:t=0,duration:i=500,className:a,as:o=`div`,...s}){return(0,r.jsx)(o,{className:n(`animate-fade-up`,a),style:{animationDelay:`${t}ms`,animationDuration:`${i}ms`,animationFillMode:`both`,opacity:0},...s,children:e})}export{i as t};
